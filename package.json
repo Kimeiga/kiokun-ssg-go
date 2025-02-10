@@ -7,7 +7,7 @@
 		"dev": "vite dev",
 		"build": "vite build && npm run build:dictionary",
 		"preview": "vite preview",
-		"prepare:dictionary": "bash scripts/prepare-dictionary.sh",
+		"prepare:dictionary": "bash scripts/build-dictionary-builder.sh",
 		"prebuild:dictionary": "chmod +x ./bin/dictionary-builder && npm run prepare:dictionary",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
