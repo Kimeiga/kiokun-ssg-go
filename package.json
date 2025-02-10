@@ -7,12 +7,13 @@
 		"dev": "vite dev",
 		"build": "vite build && npm run build:dictionary",
 		"preview": "vite preview",
+		"prebuild:dictionary": "chmod +x ./bin/dictionary-builder",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
-		"build:dictionary": "go run jmdict_types.go main.go -input jmdict-eng-3.5.0.json -output dictionary -workers 8 -vercel"
+		"build:dictionary": "./bin/dictionary-builder -input jmdict-eng-3.5.0.json -output dictionary -workers 8 -vercel"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",

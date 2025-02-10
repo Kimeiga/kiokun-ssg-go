@@ -24,3 +24,5 @@ vite.config.ts.timestamp-*
 
 jmdict-eng-3.5.0.json
 dictionary/
+
+!bin/dictionary-builder
