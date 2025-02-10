@@ -5,7 +5,7 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "installCommand": "go install && npm install",
+        "installCommand": "curl -sL https://golang.org/dl/go1.21.0.linux-amd64.tar.gz | tar -C /usr/local -xz && export PATH=$PATH:/usr/local/go/bin && npm install",
         "buildCommand": "npm run build"
       }
     }
