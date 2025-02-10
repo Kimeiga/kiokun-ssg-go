@@ -7,13 +7,14 @@
 		"dev": "vite dev",
 		"build": "vite build && npm run build:dictionary",
 		"preview": "vite preview",
-		"prebuild:dictionary": "chmod +x ./bin/dictionary-builder",
+		"prepare:dictionary": "bash scripts/prepare-dictionary.sh",
+		"prebuild:dictionary": "chmod +x ./bin/dictionary-builder && npm run prepare:dictionary",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
-		"build:dictionary": "./bin/dictionary-builder -input jmdict-eng-3.5.0.json -output dictionary -workers 8 -vercel"
+		"build:dictionary": "./bin/dictionary-builder -input data/jmdict/jmdict-eng-3.5.0.json.xz -output dictionary -workers 8 -vercel"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
