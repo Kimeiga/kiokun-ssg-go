@@ -1,13 +1,13 @@
 {
-    "version": 2,
-    "buildCommand": "export GOROOT=/tmp/go && curl -L -o go.tar.gz https://go.dev/dl/go1.22.1.linux-amd64.tar.gz && tar -C /tmp -xzf go.tar.gz && export PATH=/tmp/go/bin:$PATH && bash -c 'PATH=/tmp/go/bin:$PATH npm run build'",
-    "installCommand": "npm install",
-    "framework": "sveltekit",
-    "builds": [
-      { "src": "api/*.go", "use": "@vercel/go" },
-      { "src": "package.json", "use": "@vercel/static-build" }
-    ],
-    "routes": [
-      { "src": "/api/word/(.*)", "dest": "/api/word.go" }
-    ]
-} 
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "installCommand": "go install && npm install",
+        "buildCommand": "npm run build"
+      }
+    }
+  ]
+}
