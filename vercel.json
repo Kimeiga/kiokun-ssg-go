@@ -4,6 +4,9 @@
     "installCommand": "npm install",
     "framework": "sveltekit",
     "builds": [
-      { "src": "package.json", "use": "@vercel/static-build" }
+      { "src": "api/*.go", "use": "@vercel/go" }
+    ],
+    "routes": [
+      { "src": "/api/word/(.*)", "dest": "/api/word.go" }
     ]
 } 
