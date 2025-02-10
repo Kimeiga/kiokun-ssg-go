@@ -12,7 +12,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
-		"build:dictionary": "go run jmdict_types.go main.go -input jmdict-eng-3.5.0.json -output dictionary -workers 8"
+		"build:dictionary": "go run jmdict_types.go main.go -input jmdict-eng-3.5.0.json -output dictionary -workers 8 -vercel"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
